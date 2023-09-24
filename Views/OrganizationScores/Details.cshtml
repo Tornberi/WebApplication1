@@ -1,0 +1,75 @@
+﻿@using WebApplication1.Repository
+@model WebApplication1.Models.OrganizationScores
+@{
+    ViewData["Title"] = "Title";
+}
+
+<head>
+    <title>Общая информация</title>
+    <h1>Информация об отзыве</h1>
+
+    <style>
+        body {
+            background-image: url('https://yandex-images.clstorage.net/mn9C7f418/cc7c8enC/1aJ0cdXt_eF8K8340wobfvPQir3hO4uGerulsaBTORUsDesZkxBs40WWa8wZukwAc2jbUgHs4igf5TugqufZ42DWMeXw2egFDCucvGOu2t4y0d58NQrfp-r70CFlRZqyTj_Y_iByy5HiB55N3a6P46IdPnWhHCKY3NJsttiUjheF4FTiFyxuRS_oDb4CKIg-AyBtfgIqLwWsCVclALULsS2O6D2TAokwEgZ9CEw9L2J1XEznY0xiGc6DnedYFD2WFzIEEofsH0UcyOy9A6upTJECjw0ROV_03jtGpuAkmDDdrNo-k4BJAbCkjKkMLrzQRF59Z1HcAIq-o2x02TaeBSQwB_Ol7c5Vf6qcniKqOz4REFz9sGntF-wLl7dwFikzP4-L3gFwGoOARNyrjK5NsyY8vJaDP1FavIDtt4mXTleGoHayppwMRM3Z_B0zCxnew_E8jqHIfie8CFfkEmb5M86emD9Bortgc9V_-U5vLgA0DO8FwW2RCD8i7nWJBT9UNQEEwTe-zJbdmaysE5g7bALiXW4TGO70PinFhPM1eRIcrUm90-MKcuKVbGi83L6B9gy8JWK94RluoE7E6eeN9kTRZMJ2vq9HzaqMHGPLOBzC4hydsRo_Rf3rxKVDZtoSDj14jqLAKULQZD8LLEzfkOSvbldSjsF6zoCfB5lWP3UHQdUiNS4fR24KLVxAavnsM8HP3GDpnfRdqhe24PfoQE1MyX-jcpmjwscuynzfDFMVf3-WwI_yyq9DjtWbJY-mNjA0c7cuv8bsO_yfIBs5bNMBjo5T6C3nbZo3VWBnClAODtgOYbMrMDC0bIteTY1AdY-cZ3N9sokNo13XO9afdPWDZyOV37zkrDiu3TM5aO7Soj0MQjvvpN_KFeTjZMsAzv74TbJweSNi9s5KLq7NAxe-fRdD3eDJ_4L_54gV3ic2kFay1zz95Q47H57wCMrcU0F-nCBZ3kePOZXX0CcZA');
+            background-size: 100% 100%;
+        }
+        h1 {
+            color: white;
+        }
+        label{
+            color:white;
+        }
+        input{
+            margin-top: 20px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form asp-controller="OrganizationScores" asp-action="Details" method="get" style="text-align:center">
+        <input type="hidden" asp-for="id" />
+
+            <label asp-for="UserName"></label>
+            <div>
+                <input asp-for="UserName" />
+                <span asp-validation-for="UserName" />
+            </div>
+
+            <label asp-for="OrganizationName"></label>
+            <div>
+                <input asp-for="OrganizationName" />
+                <span asp-validation-for="OrganizationName" />
+            </div>
+
+            <label asp-for="OrganizationAreas"></label>
+            <div>
+                <input asp-for="OrganizationAreas" />
+                <span asp-validation-for="OrganizationAreas" />
+            </div>
+
+            <label asp-for="PlusOrganization"></label>
+            <div>
+                <input asp-for="PlusOrganization" />
+                <span asp-validation-for="PlusOrganization" />
+            </div>
+
+            <label asp-for="MinusOrganization"></label>
+            <div>
+                <input asp-for="MinusOrganization" />
+                <span asp-validation-for="MinusOrganization" />
+            </div>
+
+            <label asp-for="Comment"></label>
+            <div>
+                <input asp-for="Comment" />
+                <span asp-validation-for="Comment" />
+            </div>
+
+            <label asp-for="Scores"></label>
+            <div>
+            <input asp-for="Scores" style="margin-top: 20px; width: 300px;" />
+                <span asp-validation-for="Scores" />
+            </div>
+            <input type="submit" asp-controller="OrganizationScores" asp-action="Index" value="Закрыть" class="btn btn-success" style="height: 50px; width: 200px;" />  
+    </form>
+</body>

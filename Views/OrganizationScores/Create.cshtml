@@ -1,0 +1,90 @@
+﻿@using WebApplication1.Repository;
+@model WebApplication1.Models.OrganizationScores;
+@{
+    ViewData["Title"] = "Title";
+}
+
+<head>
+    <title>Создание отзыва</title>
+    <h1>Добавление нового отзыва об организации</h1>
+    <style>
+        label{
+            color:white;
+        }
+        h1{
+            color: white;
+        }
+        span{
+            color: red;
+        }
+        input{
+            margin-bottom: 20px;
+            width: 300px;
+        }
+        body{
+            background-image: url('https://i.blogs.es/a67e3c/maxresdefault/1024_682.jpeg');
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div style=" text-align:center; padding-top: 25px;">
+        <form asp-controller="OrganizationScores" asp-action="Create" method="post">
+            <input type="hidden" asp-for="id" />
+
+            <div>
+                <label asp-for="UserName"></label>
+            </div>
+            <div>
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div>
+                <input asp-for="UserName" />
+            </div>
+
+            <div>
+                <label asp-for="OrganizationName"></label>
+            </div>
+            <div>
+                <span asp-validation-for="OrganizationName"></span>
+
+            </div>
+            <div>
+                <input asp-for="OrganizationName" />
+            </div>
+
+            <label asp-for="OrganizationAreas"></label>
+            <div>
+                <input asp-for="OrganizationAreas" />
+            </div>
+
+            <label asp-for="PlusOrganization"></label>
+            <div>
+                <span asp-validation-for="PlusOrganization" style="width: 300px;"></span>
+            </div>
+            <div>
+                <input asp-for="PlusOrganization" />
+            </div>
+
+            <label asp-for="MinusOrganization"></label>
+
+            <div>
+                <input asp-for="MinusOrganization" />
+            </div>
+
+            <label asp-for="Comment"></label>
+            <div>
+                <input asp-for="Comment" />
+            </div>
+            
+            <label asp-for="Scores"></label>
+            <div>
+                <span asp-validation-for="Scores" ></span>
+            </div>
+            <div>
+                <input asp-for="Scores"  />
+            </div>
+            <input type="submit" value="Готово" class="btn btn-success" style="height: 50px;" />
+        </form>
+    </div>
+</body>

@@ -1,0 +1,22 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.imgRead {
+    background-image: url('https://sun9-73.userapi.com/impg/GmmTHv74Hf_lOUQbgji4jHwSAuZ6VUDv4ZDfDQ/DxO-VfNqhOc.jpg?size=1600x1194&quality=96&sign=5e1f512b1baf7cdabe3e68fa25a2e15a&type=album')
+}

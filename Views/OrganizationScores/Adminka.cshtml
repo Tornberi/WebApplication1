@@ -1,0 +1,54 @@
+﻿@using WebApplication1.Repository
+@model IEnumerable<WebApplication1.Models.OrganizationScores>
+@{
+    ViewData["Title"] = "Title";
+}
+
+<head>
+    <title>Список отзывов "Админ"</title>
+</head>
+<body>
+    <h1>Список отзывов об организациях</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                        @Html.DisplayNameFor(x => x.OrganizationName)
+                </th>
+                <th>
+                        @Html.DisplayNameFor(x => x.OrganizationAreas)
+                </th>
+                <th>
+                        @Html.DisplayNameFor(x => x.Scores)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (OrganizationScores row in Model)
+            {
+                <tr>
+                    <th>
+                            @row.OrganizationName
+                    </th>
+                    <th>
+                            @row.OrganizationAreas
+                    </th>
+                    <th>
+                            @row.Scores
+                    </th>
+                    <th>
+                        <form method="get" asp-controller="OrganizationScores" asp-action="Details">
+                            <input type="hidden" value="@row.id" name="id" />
+                            <input type="submit" value="Информация" style="height: 40px; width: 150px" class="btn btn-primary" />
+                        </form>
+
+                        <form method="post" asp-controller="OrganizationScores" asp-action="Delete">
+                                <input type="hidden" value="@row.id" name="id" />
+                                <input type="submit" value="Удалить" style="height: 40px; width: 150px" class="btn btn-danger" />
+                        </form>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
